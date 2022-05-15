@@ -12,7 +12,7 @@ export function Success({ onSendAnotherFeedback }: SuccessProps) {
       <Image source={successImg} style={styles.image} />
       <Text style={styles.title}>Agradecemos seu Feedback</Text>
       <TouchableOpacity style={styles.button} onPress={onSendAnotherFeedback}>
-        <Text style={styles.buttonTitle}>Quero enviar outro</Text>
+        <Text style={styles.buttonTitle}>Quero enviar outro Feedback</Text>
       </TouchableOpacity>
 
       <Copyright />

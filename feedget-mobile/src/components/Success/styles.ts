@@ -18,10 +18,12 @@ export const styles = StyleSheet.create({
     color: theme.colors.text_primary,
   },
   button: {
-    width: 40,
+    width: "100%",
+    height: 50,
     backgroundColor: theme.colors.text_secondary,
     borderRadius: 4,
     alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: 24,
     marginBottom: 56,
   },
