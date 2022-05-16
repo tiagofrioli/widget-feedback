@@ -3,6 +3,7 @@ import { FormEvent, useState } from "react";
 import CloseButton from "../../closeButton/CloseButton";
 import ScreenshotButton from "../../screenshotButton/ScreenshotButton";
 import { FeedbackType, feedbackTypes } from "../types";
+import api from "../../../service/api";
 
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
@@ -20,13 +21,20 @@ function FeedbackContentStep({
   const [comment, setComment] = useState("");
   const [screenshot, setScreenshot] = useState<string | null>(null);
 
-  function handleSubmitFeedback(event: FormEvent) {
+  async function handleSubmitFeedback(event: FormEvent) {
     event.preventDefault();
-
+    /* 
     console.log({
       screenshot,
       comment,
+    }); */
+
+    await api.post("/feedbacks", {
+      type: feedbackType,
+      comment,
+      screenshot,
     });
+
     onFeedbackSent();
   }
 
